@@ -1,0 +1,18 @@
+{
+  "appId": "com.gamestudio.kidspoliceoriginal",
+  "appName": "شرطة الأطفال المحسن",
+  "backgroundColor": "#080e28",
+  "webDir": "dist-mobile",
+  "experimental": {
+    "ios": {
+      "spm": {
+        "swiftToolsVersion": "6.1"
+      }
+    }
+  },
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+workflows:
+  ios-testflight:
+    name: Kids Police Enhanced iOS TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    integrations:
+      app_store_connect: seven tech
+    environment:
+      node: '22'
+      xcode: '26.4'
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.gamestudio.kidspoliceoriginal
+    scripts:
+      - name: Install and package offline calls
+        script: |
+          npm ci
+          npm run build:mobile
+          test "$(find dist-mobile/assets/audio -mindepth 3 -type f -name '*.mp3' | wc -l | tr -d ' ')" = 60
+          test ! -e dist-mobile/monetization.js
+          npx cap sync ios
+          ! grep -Ei 'admob|firebase|analytics' ios/App/CapApp-SPM/Package.swift
+          plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
+      - name: Sign and export App Store build
+        script: |
+          cd ios/App
+          agvtool new-version -all "$BUILD_NUMBER"
+          xcode-project use-profiles
+          xcode-project build-ipa --project App.xcodeproj --scheme App
+    artifacts:
+      - ios/App/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_app_store: false

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b101f">
+  <meta name="description" content="شرطة الأطفال المحسن، لعبة مكالمات تمثيلية عائلية بالمصرية والسعودية والإماراتية.">
+  <title>شرطة الأطفال المحسن</title>
+  <link rel="icon" href="assets/art/launch-mark.png" type="image/png">
+  <link rel="preload" href="assets/art/launch-city.webp" as="image" media="(prefers-reduced-motion: no-preference)">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="monetization.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22c4.8-2.3 8-5.9 8-11V6l-8-4-8 4v5c0 5.1 3.2 8.7 8 11Z"/><path d="m12 7.5 1.15 2.3 2.55.4-1.85 1.8.45 2.55-2.3-1.2-2.3 1.2.45-2.55-1.85-1.8 2.55-.4L12 7.5Z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m2 11 10-8 10 8M5 10v11h5v-7h4v7h5V10"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-dialing" viewBox="0 0 32 32"><path d="M23 17a8 8 0 0 0-8-8m12 8A12 12 0 0 0 15 5m16 12A16 16 0 0 0 15 1"/><path class="phone-fill" d="M24.8 24.5v2.7a2.3 2.3 0 0 1-2.5 2.3 23.9 23.9 0 0 1-10.1-3.6 23.7 23.7 0 0 1-7.2-7.2A23.9 23.9 0 0 1 1.4 8.6 2.3 2.3 0 0 1 3.7 6h3.6a2.4 2.4 0 0 1 2.3 2l.7 3.2a2.3 2.3 0 0 1-.7 2.4L8 15.2a19.3 19.3 0 0 0 6.7 6.7l1.6-1.6a2.3 2.3 0 0 1 2.4-.7l4.2 1.5a2.4 2.4 0 0 1 1.9 3.4Z"/></symbol>
+    <symbol id="i-end" viewBox="0 0 24 24"><path d="M3.5 15.9 2 13a2 2 0 0 1 .4-2.3 14 14 0 0 1 19.2 0 2 2 0 0 1 .4 2.3l-1.5 2.9a1.7 1.7 0 0 1-2.2.7l-3.1-1.3a1.8 1.8 0 0 1-1-1.6v-1.4a10 10 0 0 0-4.4 0v1.4a1.8 1.8 0 0 1-1 1.6l-3.1 1.3a1.7 1.7 0 0 1-2.2-.7Z"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 5 5 5m0-5-5 5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M6 11v1a6 6 0 0 0 12 0v-1m-6 7v3m-3 0h6"/></symbol>
+    <symbol id="i-mic-off" viewBox="0 0 24 24"><path d="M3 3l18 18M9 9v3a3 3 0 0 0 5.1 2.2M9.1 5.4A3 3 0 0 1 15 6v4m3 1v1a6 6 0 0 1-.6 2.6M6 11v1a6 6 0 0 0 10.2 4.2M12 18v3m-3 0h6"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><path d="M6 4h.01m6 0h.01m6 0h.01M6 9h.01m6 0h.01m6 0h.01M6 14h.01m6 0h.01m6 0h.01m-6 5h.01"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <main id="game" class="game" data-current="home" aria-label="شرطة الأطفال المحسن">
+    <header class="shell-bar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+        <span class="brand-text">شرطة الأطفال <strong>المحسن</strong></span>
+      </div>
+      <span class="simulation-label">محاكاة تمثيلية</span>
+    </header>
+
+    <section id="home" class="screen hero home" aria-labelledby="home-title">
+      <div class="scene-art home-art" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 id="home-title" tabindex="-1">شرطة الأطفال <span>المحسن</span></h1>
+        <p>اختار اللهجة والموقف. المكالمات مسجّلة والشخصيات خيالية.</p>
+        <div class="actions">
+          <button type="button" class="gold" data-go="dialect"><svg class="icon" aria-hidden="true"><use href="#i-dialing"/></svg> ابدأ الآن</button>
+          <a class="privacy-link" href="privacy.html">الخصوصية</a>
+          <button type="button" id="open-test-options" class="privacy-link test-options-link" hidden>إعدادات الاختبار للأهل</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="dialect" class="screen setup dialect" aria-labelledby="dialect-title" hidden>
+      <div class="menu-content">
+        <button type="button" class="back" data-go="home" aria-label="رجوع"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="screen-heading">
+          <h2 id="dialect-title" tabindex="-1">اختر اللهجة</h2>
+          <p>اختار اللهجة المناسبة لعيلتك.</p>
+        </div>
+        <fieldset class="choices region-choices" aria-label="اللهجة">
+          <label class="region-card egypt-card">
+            <input type="radio" name="dialect-family" value="egyptian" checked>
+            <span class="region-label">المصرية</span><span class="tick" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+          </label>
+          <label class="region-card gulf-card">
+            <input type="radio" name="dialect-family" value="gulf">
+            <span class="region-label">الخليجية</span><span class="tick" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+          </label>
+        </fieldset>
+        <div class="actions"><button type="button" class="gold" id="confirm-dialect">متابعة <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></div>
+      </div>
+      <div class="scene-art menu-art dialect-art" aria-hidden="true"></div>
+    </section>
+
+    <section id="gulf" class="screen setup dialect" aria-labelledby="gulf-title" hidden>
+      <div class="menu-content">
+        <button type="button" class="back" data-go="dialect" aria-label="رجوع"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="screen-heading">
+          <h2 id="gulf-title" tabindex="-1">اختر اللهجة الخليجية</h2>
+          <p>تقدر تختار بين السعودي والإماراتي.</p>
+        </div>
+        <fieldset class="choices region-choices" aria-label="اللهجة الخليجية">
+          <label class="region-card saudi-card">
+            <input type="radio" name="gulf-dialect" value="sa" checked>
+            <span class="region-label">السعودية</span><span class="tick" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+          </label>
+          <label class="region-card emirati-card">
+            <input type="radio" name="gulf-dialect" value="ae">
+            <span class="region-label">الإماراتية</span><span class="tick" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+          </label>
+        </fieldset>
+        <div class="actions"><button type="button" class="gold" data-go="reason">متابعة <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></div>
+      </div>
+      <div class="scene-art menu-art gulf-art" aria-hidden="true"></div>
+    </section>
+
+    <section id="reason" class="screen setup reason" aria-labelledby="reason-title" hidden>
+      <div class="menu-content">
+        <button type="button" class="back" id="back-from-reason" aria-label="رجوع"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="screen-heading">
+          <h2 id="reason-title" tabindex="-1">اختر سبب المكالمة</h2>
+          <p id="reason-officer"></p>
+        </div>
+        <fieldset id="reason-choices" class="choices reason-choices" aria-label="سبب المكالمة"></fieldset>
+        <div class="actions"><button type="button" class="gold" data-go="connecting"><svg class="icon" aria-hidden="true"><use href="#i-dialing"/></svg> ابدأ المكالمة</button></div>
+      </div>
+      <div class="scene-art menu-art officer-art" aria-hidden="true"></div>
+    </section>
+
+    <section id="connecting" class="screen hero connecting" aria-labelledby="connecting-title" hidden>
+      <div class="scene-art connecting-art" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="dialing-icon" aria-hidden="true"><svg class="icon"><use href="#i-dialing"/></svg></div>
+        <h2 id="connecting-title" tabindex="-1">جاري الاتصال…</h2>
+        <p id="connecting-officer"></p>
+        <div class="actions"><button type="button" class="secondary" data-go="reason">إلغاء الاتصال</button></div>
+      </div>
+    </section>
+
+    <section id="voice" class="screen call-stage voice" aria-labelledby="voice-title" hidden>
+      <div id="voice-visual" class="scene-art voice-art" aria-hidden="true"></div>
+      <div class="call-panel">
+        <header class="call-top">
+          <button type="button" class="back" data-go="reason" aria-label="رجوع للاختيارات"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <div class="call-status"><span class="status-dot" aria-hidden="true"></span><time id="call-time" dir="ltr">00:00</time></div>
+        </header>
+        <div class="voice-main">
+          <div id="voice-avatar" class="voice-avatar" aria-hidden="true"></div>
+          <h2 id="voice-title" tabindex="-1">شرطة الأطفال</h2>
+          <p id="voice-hint">المكالمة بدأت · الحوار مكتوب</p>
+        </div>
+        <div id="voice-controls" class="call-controls"></div>
+      </div>
+    </section>
+
+    <section id="talk" class="screen call-stage talk" aria-labelledby="talk-title" hidden>
+      <div class="scene-art officer-art talk-art" aria-hidden="true"></div>
+      <div class="call-panel">
+        <header class="call-top">
+          <button type="button" class="back" data-go="reason" aria-label="رجوع للاختيارات"><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <div class="call-status"><span class="status-dot" aria-hidden="true"></span><time id="talk-time" dir="ltr">00:00</time></div>
+        </header>
+        <div class="dialogue">
+          <h2 id="talk-title" tabindex="-1">الحوار التمثيلي</h2>
+          <button type="button" id="speech" class="speech">
+            <span id="speech-text" class="speech-text"></span>
+            <span id="speech-action" class="speech-action">متابعة</span>
+          </button>
+
+          <div id="recorded-dialogue" hidden>
+            <p id="recorded-status" class="recorded-status" role="status"></p>
+            <div id="recorded-actions" class="recorded-actions" hidden>
+              <button type="button" id="recorded-next" class="gold" data-recorded-action="next">خلّي الضابط يكمّل</button>
+              <button type="button" id="recorded-quiet" class="gold" data-recorded-action="quiet">سكت</button>
+              <button type="button" id="recorded-loud" class="secondary" data-recorded-action="calm">لسه</button>
+              <button type="button" id="recorded-end" class="secondary" data-recorded-action="end">إنهاء المكالمة</button>
+            </div>
+          </div>
+          <button type="button" id="audio-retry" class="secondary audio-retry" hidden>تشغيل الصوت</button>
+        </div>
+        <div id="talk-controls" class="call-controls"></div>
+      </div>
+    </section>
+
+    <section id="success" class="screen hero success" aria-labelledby="success-title" hidden>
+      <div class="scene-art success-art" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h2 id="success-title" tabindex="-1">اتفقنا يا بطل!</h2>
+        <p id="success-message">شكرًا لتعاونك.</p>
+        <div class="actions"><button type="button" class="gold" data-go="home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg> العودة للرئيسية</button></div>
+      </div>
+    </section>
+
+    <dialog id="keypad" class="keypad" aria-labelledby="keypad-title">
+      <div class="keypad-header">
+        <h2 id="keypad-title">لوحة الأرقام</h2>
+        <button type="button" id="close-keypad" class="back keypad-close" aria-label="إغلاق لوحة الأرقام"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <output id="keypad-display" aria-label="الأرقام المختارة"></output>
+      <div id="number-keys" class="number-keys" dir="ltr"></div>
+      <button type="button" class="secondary keypad-clear" id="clear-keypad">مسح</button>
+    </dialog>
+    <p id="call-feedback" class="sr-only" role="status"></p>
+  </main>
+  <dialog id="test-options" class="keypad test-options" aria-labelledby="test-options-title">
+    <h2 id="test-options-title">إعدادات الاختبار للأهل</h2>
+    <p>نسخة اختبار داخلية. تُطلب إعلانات تجريبية ويُرسل قياس الاستخدام إلى مشروع الاختبار حسب اختيارك. من فضلك استخدم الإعدادات بنفسك بصفتك ولي الأمر أو المختبِر.</p>
+    <label><input id="test-ads" type="checkbox"> تشغيل إعلانات الاختبار</label>
+    <label><input id="test-analytics" type="checkbox"> مشاركة قياس الاختبار مع Firebase</label>
+    <p id="test-ad-status" role="status">إعلانات الاختبار متوقفة افتراضيًا.</p>
+    <button type="button" id="test-privacy-choices" class="secondary" hidden>خيارات خصوصية الإعلانات</button>
+    <form method="dialog"><button class="gold">تم</button></form>
+  </dialog>
+  <div id="launch-intro" class="launch-intro" aria-hidden="true">
+    <div class="launch-art"></div>
+    <div class="launch-copy">شرطة الأطفال <strong>المحسن</strong></div>
+  </div>
+</body>
+</html>

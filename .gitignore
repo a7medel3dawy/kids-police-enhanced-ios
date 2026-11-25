@@ -1,0 +1,14 @@
+node_modules/
+dist-mobile/
+.DS_Store
+xcuserdata/
+ios/App/App/public/
+ios/App/App/capacitor.config.json
+ios/App/App/config.xml
+/ios/capacitor-cordova-ios-plugins/
+build/
+*.ipa
+*.p12
+*.p8
+*.mobileprovision
+GoogleService-Info.plist
